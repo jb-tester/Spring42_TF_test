@@ -1,5 +1,6 @@
 package mytests.spring42.testingFrameworkSupport;
 
+import mytests.spring42.testingFrameworkSupport.annotattions.MyCurrentProfiles;
 import mytests.spring42.testingFrameworkSupport.annotattions.MyJavaContextConfig;
 import mytests.spring42.testingFrameworkSupport.components.Compo1;
 import mytests.spring42.testingFrameworkSupport.components.Compo2;
@@ -7,8 +8,6 @@ import mytests.spring42.testingFrameworkSupport.javaConfigs.MyConfig1;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
@@ -19,8 +18,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(classes = MyConfig1.class)
+//@ActiveProfiles(profiles = "p1")
 @MyJavaContextConfig(configClasses = MyConfig1.class)
-@ActiveProfiles(profiles = "p1")
+@MyCurrentProfiles(activeProfiles = "p1")
 public class JavaConfTest {
     @Autowired
     Compo1 myCompo1;

@@ -7,8 +7,6 @@ import mytests.spring42.testingFrameworkSupport.components.Compo2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
@@ -18,9 +16,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * *******************************
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:foo.xml")
-//@MyXMLContextConfig(xmlFiles = "classpath:foo.xml")
+//@ContextConfiguration(locations = "classpath:foo.xml")
 //@ActiveProfiles(profiles = "p1")
+@MyXMLContextConfig(xmlFiles = "classpath:foo.xml")
 @MyCurrentProfiles(activeProfiles = "p1")
 public class XMLConfTest {
     @Autowired
