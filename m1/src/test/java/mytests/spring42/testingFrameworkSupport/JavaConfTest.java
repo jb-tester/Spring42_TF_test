@@ -1,5 +1,6 @@
 package mytests.spring42.testingFrameworkSupport;
 
+import mytests.spring42.testingFrameworkSupport.annotattions.MyJavaContextConfig;
 import mytests.spring42.testingFrameworkSupport.components.Compo1;
 import mytests.spring42.testingFrameworkSupport.components.Compo2;
 import mytests.spring42.testingFrameworkSupport.javaConfigs.MyConfig1;
@@ -17,7 +18,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * *******************************
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = MyConfig1.class)
+//@ContextConfiguration(classes = MyConfig1.class)
+@MyJavaContextConfig(configClasses = MyConfig1.class)
 @ActiveProfiles(profiles = "p1")
 public class JavaConfTest {
     @Autowired

@@ -1,5 +1,6 @@
 package mytests.spring42.testingFrameworkSupport;
 
+import mytests.spring42.testingFrameworkSupport.annotattions.MyJavaContextConfig;
 import mytests.spring42.testingFrameworkSupport.beans.B1;
 import mytests.spring42.testingFrameworkSupport.beans.B2;
 import mytests.spring42.testingFrameworkSupport.components.Compo1;
@@ -22,13 +23,16 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
  * *******************************
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(loader = AnnotationConfigContextLoader.class)
+//@ContextConfiguration(loader = AnnotationConfigContextLoader.class)
+@MyJavaContextConfig()
 @ActiveProfiles(profiles = "p1")
 public class DefaultJavaConfTest {
     @Autowired
     Compo1 myCompo1;
     @Autowired
     Compo2 myCompo2;
+    @Autowired
+    B2 b2;
     @Test
     public void testAllBeans(){
         String r1 = myCompo1.getId();

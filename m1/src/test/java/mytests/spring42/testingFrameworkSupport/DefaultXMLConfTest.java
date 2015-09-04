@@ -1,14 +1,13 @@
 package mytests.spring42.testingFrameworkSupport;
 
+import mytests.spring42.testingFrameworkSupport.annotattions.MyXMLContextConfig;
 import mytests.spring42.testingFrameworkSupport.components.Compo1;
 import mytests.spring42.testingFrameworkSupport.components.Compo2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.GenericXmlContextLoader;
 
 /**
  * *******************************
@@ -17,7 +16,8 @@ import org.springframework.test.context.support.GenericXmlContextLoader;
  * *******************************
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(loader = GenericXmlContextLoader.class)
+//@ContextConfiguration(loader = GenericXmlContextLoader.class)
+@MyXMLContextConfig()
 @ActiveProfiles(profiles = "p1")
 public class DefaultXMLConfTest {
     @Autowired
